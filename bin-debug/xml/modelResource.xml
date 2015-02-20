@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--model.textFile.@name 不能重复-->
+<resource>
+	<model>
+		<textFile  name="Male_idle"	size="1853069" animation = "0" src="assets/man/T_D.DAE"	/>
+		<imageFile name="Male_"	size="1853069" ext = "1" 
+				diffuseSrc="assets/man/T_Rex_D.jpg" normalSrc="assets/man/T_Rex_N.jpg" specularSrc="assets/man/T_Rex_S.jpg" />
+	</model>
+	<model>
+		<textFile  name="Male_walk"	size="2020926" animation = "1" src="assets/man/T_D_run.DAE"/>
+		<!--<imageFile name="Male_"	size="1853069" ext = "1" 
+				diffuseSrc="assets/man/Male_D.jpg" normalSrc="assets/man/Male_N.jpg" specularSrc="assets/man/Male_S.jpg" />-->
+	</model>
+	<!-- <model>
+		<textFile  name="Rex_Sword_Attack"	size="1166049"  animation = "1" src="assets/Rex_Attack_Animation/Rex_Sward_Attack1.dae" />
+	</model>
+	<model>
+		<textFile  name="Rex_Sword_Beattacked"	size="1166049"  animation = "1" src="assets/Rex_Attack_Animation/Rex_Sward_behit.dae" />
+	</model>
+	<model>
+		<textFile  name="Rex_Sword_Activation"	size="2742015"  animation = "0" src="assets/Rex_Attack_Animation/Rex_Sward_activition.dae" />
+		<imageFile name="Rex"	size="405697" ext ="1" 
+				diffuseSrc="assets/T_Rex_D.jpg" normalSrc="assets/T_Rex_N.jpg" specularSrc="assets/T_Rex_S.jpg" />
+		<imageFile name="Sword"	size="91407" ext= "1" 
+				diffuseSrc="assets/T_Giant_sword_D.jpg"  normalSrc="assets/T_Giant_sword_N.jpg" specularSrc="assets/T_Giant_sword_S.jpg" />
+	</model>
+	<model>
+		<textFile  name="Rex_Sword_Idle"	size="1166049"  animation = "1" src="assets/Rex_Attack_Animation/Rex_Sward_idle.dae" />
+	</model>
+	<model>
+		<textFile  name="Rex_Sword_Die"	size="1166049"  animation = "1" src="assets/Rex_Attack_Animation/Rex_Sward_death.dae" />
+	</model>
+	<model>
+		<textFile  name="Rex_Sword_Run"	size="1166049"  animation = "1" src="assets/Rex_Attack_Animation/Rex_Sward_run.dae" />
+	</model>
+	<model>
+		<textFile  name="Rex_Sword_Jump_Rising"	size="1166049"  animation = "1"  src="assets/Rex_Attack_Animation/Rex_Sward_jump_rising.dae" />
+	</model>
+	<model>
+		<textFile  name="Rex_Sword_Jump_Landing"	size="1166049" animation = "1" src="assets/Rex_Attack_Animation/Rex_Sward_jump_landing.dae" />
+	</model>
+	<model>
+		<textFile  name="Rex_Sword_Deactivation"   size="802186"  animation = "1" src="assets/Rex_Attack_Animation/Rex_Sward_deactivition.dae" />
+	</model>
+	<model>
+		<textFile  name="Rex_Buster_Activation"   size="802186"  animation = "0" src="assets/Rex_Attack_Animation/Rex_Buster_activition.dae" />
+		<imageFile name="Rex"	size="405697" ext ="1" 
+				diffuseSrc="assets/T_Rex_D.jpg" normalSrc="assets/T_Rex_N.jpg" specularSrc="assets/T_Rex_S.jpg" />
+		<imageFile name="Buster"	size="91407" ext ="1"
+				diffuseSrc="assets/Rex_Attack_Animation/T_Punk_Busters_D.jpg" normalSrc="assets/Rex_Attack_Animation/T_Punk_Busters_N.jpg" specularSrc="assets/Rex_Attack_Animation/T_Punk_Busters_S.jpg" />
+	</model>
+	<model>
+		<textFile  name="Rex_Buster_Attack"	size="1166049" animation = "1" src="assets/Rex_Attack_Animation/Rex_Buster_attack.dae" />
+	</model>
+	<model>
+		<textFile  name="Rex_Buster_Beattacked"	size="1166049" animation = "1" src="assets/Rex_Attack_Animation/Rex_Buster_behit.dae" />
+	</model>
+	<model>
+		<textFile  name="Rex_Buster_Die"	size="1166049"  animation = "1" src="assets/Rex_Attack_Animation/Rex_Buster_death.dae"/>
+	</model>
+	<model>
+		<textFile  name="Rex_Buster_Idle"	size="1166049"  animation = "1" src="assets/Rex_Attack_Animation/Rex_Buster_idle.dae" />
+	</model>
+	<model>
+		<textFile  name="Rex_Buster_Run"	size="1166049"  animation = "1" src="assets/Rex_Attack_Animation/Rex_Buster_run.dae" />
+	</model>
+	<model>
+		<textFile  name="Rex_Buster_Jump_Rising"	size="1166049"  animation = "1" src="assets/Rex_Attack_Animation/Rex_Buster_jump_rising.dae" />
+	</model>
+	<model>
+		<textFile  name="Rex_Buster_Jump_Landing"	size="1166049"  animation = "1" src="assets/Rex_Attack_Animation/Rex_Buster_jump_landing.dae" />
+	</model>
+	<model>
+		<textFile  name="Rex_Buster_Deactivation"   size="802186"  animation = "1" src="assets/Rex_Attack_Animation/Rex_Buster_deactivition.dae" />
+	</model>
+	<model>
+		<textFile  name="Rex_Cannon_Activation"   size="802186"  animation = "0" src="assets/Rex_Attack_Animation/Rex_Cannon_activition.dae" />
+		<imageFile name="Rex"	size="405697" ext ="1" 
+				diffuseSrc="assets/T_Rex_D.jpg" normalSrc="assets/T_Rex_N.jpg" specularSrc="assets/T_Rex_S.jpg" />
+		<imageFile name="Cannon"	size="91407" ext ="1"
+				diffuseSrc="assets/Rex_Attack_Animation/T_Slam_Cannon_D.jpg" normalSrc="assets/Rex_Attack_Animation/T_Slam_Cannon_N.jpg" specularSrc="assets/Rex_Attack_Animation/T_Slam_Cannon_S.jpg" />
+	</model>
+	<model>
+		<textFile  name="Rex_Cannon_Attack"	size="1166049"  animation = "0" src="assets/Rex_Attack_Animation/Rex_cannon_Shoot.dae" />
+	</model>
+	<model>
+		<textFile  name="Rex_Cannon_Beattacked"	size="1166049"  animation = "0" src="assets/Rex_Attack_Animation/Rex_cannon_behit.dae" />
+	</model>
+	<model>
+		<textFile  name="Rex_Cannon_Die"	size="1166049"  animation = "0" src="assets/Rex_Attack_Animation/Rex_cannon_Death.dae"/>
+	</model>
+	<model>
+		<textFile  name="Rex_Cannon_Idle"	size="1166049"  animation = "0" src="assets/Rex_Attack_Animation/Rex_cannon_idle.dae" />
+	</model>
+	<model>
+		<textFile  name="Rex_Cannon_Run"	size="1166049"  animation = "0" src="assets/Rex_Attack_Animation/Rex_cannon_Run.dae" />
+	</model>
+	<model>
+		<textFile  name="Rex_Cannon_Jump_Rising"	size="1166049"  animation = "0" src="assets/Rex_Attack_Animation/Rex_cannon_jump_rising.dae" />
+	</model>
+	<model>
+		<textFile  name="Rex_Cannon_Jump_Landing"	size="1166049"  animation = "0" src="assets/Rex_Attack_Animation/Rex_cannon_jump_landing.dae" />
+	</model>
+	<model>
+		<textFile  name="Rex_Cannon_Deactivation"   size="802186"  animation = "0" src="assets/Rex_Attack_Animation/Rex_cannon_deactivition.dae" />
+	</model>-->
+	<model>
+		<textFile  name="Terrain"	size="2473991"  animation = "0" src="assets/level/level.a3d" />
+		<imageFile name="Build"	size="" ext ="0" src="" />
+		<imageFile name="Build1"	size="" ext ="0" src="" />
+	</model>
+</resource>
