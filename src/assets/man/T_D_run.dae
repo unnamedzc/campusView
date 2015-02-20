@@ -1072,8 +1072,6 @@
       </node>
       <node id="Wii_Rex" name="Wii_Rex" type="NODE">
         <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
-        <instance_node url="#Wii_Skin_root_rex"/>
-        <instance_node url="#Wii_Skin_Rex_Mesh"/>
         <extra>
           <technique profile="OpenCOLLADAMaya">
             <originalMayaNodeId>Wii_Rex</originalMayaNodeId>

@@ -44,13 +44,7 @@ package com.jeff.views.level
 			for each (var resource:Resource in resources) {
 				resource.upload(GlobalValue.stage3D.context3D);
 			}
-		}
-		
-		//test
-		[Embed(source="../../../../assets/testNormal/T_MC_church_terrain01_D.jpg")]
-		private static const EmbedBarkDiffuse:Class;
-		[Embed(source="../../../../assets/testNormal/T_MC_church_terrain01_N.jpg")]
-		private static const EmbedBarkNormal:Class;
+		}		
 
 		private function init():void
 		{
@@ -64,20 +58,10 @@ package com.jeff.views.level
 			_rootContainer.mouseEnabled=false;	
 			
 			//test
-			var bark_diffuse:BitmapTextureResource = new BitmapTextureResource(new EmbedBarkDiffuse().bitmapData);
-			var bark_normal:BitmapTextureResource = new BitmapTextureResource(new EmbedBarkNormal().bitmapData);
-			bark_diffuse.upload(GlobalValue.stage3D.context3D);
-			bark_normal.upload(GlobalValue.stage3D.context3D);
 			
-			var barkMaterial:StandardMaterial = new StandardMaterial(bark_diffuse, bark_normal);
-			
-			var platform:Box = new Box(300, 300, 50);
-			platform.geometry.upload(GlobalValue.stage3D.context3D);
-			platform.setMaterialToAllSurfaces(barkMaterial);
-			shadowTerrain.addChild(platform);
 			///================================
-			
-			
+			_bulid["Ground"]=Mesh(ResourceManager.getInstance().model["Ground"]["Build"]);
+			shadowTerrain.addChild(_bulid["Ground"]);
 			
 			_bulid["Build0"]=Mesh(ResourceManager.getInstance().model["Terrain"]["Build"]);
 			//_bulid["Build0"].scaleX=_bulid["Build0"].scaleY=_bulid["Build0"].scaleZ=0.8;
@@ -100,7 +84,7 @@ package com.jeff.views.level
 						||meshName.indexOf("Building")!=-1										
 					)
 				{
-						shadowTerrain.addChild(_bulid[meshName]);
+					_rootContainer.addChild(_bulid[meshName]);
 				}
 				//follows add to bullet collision container
 				

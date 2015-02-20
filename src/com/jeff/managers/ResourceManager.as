@@ -426,7 +426,7 @@ package com.jeff.managers
 						model[_modelName][_materialName]=Mesh(obj);
 						// 模型贴图
 							var textures:Vector.<ExternalTextureResource> = new Vector.<ExternalTextureResource>();		
-							var _normal:BitmapTextureResource = new BitmapTextureResource(new BitmapData(1, 1, false, 0x7F80FF));
+							var _normal:BitmapTextureResource = new BitmapTextureResource(new BitmapData(1, 1, false, 0x3D5ACC));
 							for (var j:int = 0; j < (obj as Mesh).numSurfaces; j++) {
 								var surface:Surface = (obj as Mesh).getSurface(j);
 								var material:ParserMaterial = surface.material as ParserMaterial;
@@ -443,20 +443,17 @@ package com.jeff.managers
 										currentDiffuse.url = "assets/" + currentDiffuse.url;
 										currentDiffuse.url =String(currentDiffuse.url).substring(0, String(currentDiffuse.url).lastIndexOf("."))+".jpg";
 										
-										//trace(diffuse.url,currentDiffuse.url);
+										trace(diffuse.url,currentDiffuse.url);
 										textures.push(currentDiffuse);
 										
 										
 										if(diffuse.url.lastIndexOf('Grass_')!=-1
 											||diffuse.url.lastIndexOf('Sidewalk_')!=-1
-											||diffuse.url.lastIndexOf('Rock')!=-1
-											||diffuse.url.lastIndexOf('Indoor_')!=-1
-											||diffuse.url.lastIndexOf('Ground_')!=-1)
+											//||diffuse.url.lastIndexOf('Indoor_')!=-1
+											||diffuse.url.lastIndexOf('Ground')!=-1)
 										{
 											//var _normalLevel:ExternalTextureResource = new ExternalTextureResource("");
-											//_normalLevel.url='assets/blue.jpg';
-											//textures.push(_normalLevel);
-											surface.material=new TextureMaterial(currentDiffuse);
+											surface.material=new StandardMaterial(currentDiffuse,_normal);
 										}else
 										{
 										

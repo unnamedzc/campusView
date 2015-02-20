@@ -107,4 +107,9 @@
 		<imageFile name="Build"	size="" ext ="0" src="" />
 		<imageFile name="Build1"	size="" ext ="0" src="" />
 	</model>
+	<model>
+		<textFile  name="Ground"	size="24739"  animation = "0" src="assets/level/levelGround.a3d" />
+		<imageFile name="Build"	size="" ext ="0" src="" />
+		<imageFile name="Build1"	size="" ext ="0" src="" />
+	</model>
 </resource>
