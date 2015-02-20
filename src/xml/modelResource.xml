@@ -2,14 +2,12 @@
 <!--model.textFile.@name 不能重复-->
 <resource>
 	<model>
-		<textFile  name="Male_idle"	size="1853069" animation = "0" src="assets/man/T_D.DAE"	/>
+		<textFile  name="Male_idle"	size="1853069" animation = "0" src="assets/man/T_D.dae"	/>
 		<imageFile name="Male_"	size="1853069" ext = "1" 
-				diffuseSrc="assets/man/T_Rex_D.jpg" normalSrc="assets/man/T_Rex_N.jpg" specularSrc="assets/man/T_Rex_S.jpg" />
+				diffuseSrc="assets/man/T_D.jpg" normalSrc="assets/man/T_N.jpg" specularSrc="assets/man/T_S.jpg" />
 	</model>
 	<model>
-		<textFile  name="Male_walk"	size="2020926" animation = "1" src="assets/man/T_D_run.DAE"/>
-		<!--<imageFile name="Male_"	size="1853069" ext = "1" 
-				diffuseSrc="assets/man/Male_D.jpg" normalSrc="assets/man/Male_N.jpg" specularSrc="assets/man/Male_S.jpg" />-->
+		<textFile  name="Male_walk"	size="2020926" animation = "0" src="assets/man/T_D_run.dae"/>
 	</model>
 	<!-- <model>
 		<textFile  name="Rex_Sword_Attack"	size="1166049"  animation = "1" src="assets/Rex_Attack_Animation/Rex_Sward_Attack1.dae" />

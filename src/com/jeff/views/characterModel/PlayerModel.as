@@ -39,10 +39,10 @@ package com.jeff.views.characterModel
 		{
 			super.init();						
 			_playerModel=ResourceManager.getInstance().skin["Male_idle"];
-			//_playerModel.divide(11);
+			_playerModel.divide(11);
 			_playerModel.mouseEnabled = false;
 			_characterContainer.mouseChildren=_characterContainer.mouseEnabled=false;
-			//_playerModel.rotationX=Math.PI/2;
+			_playerModel.rotationX=Math.PI/2;
 			_characterContainer.addChild(_playerModel);
 				
 			_playerObject=GlobalValue.gm.playerManager.playerObject;
@@ -116,8 +116,16 @@ package com.jeff.views.characterModel
 					
 						//trace(ResourceManager.getInstance().animation["Male_walk"][0]);
 						var t1:AnimationClip = ResourceManager.getInstance().animation["Male_idle"];
-						_idle = t1.slice(0, 0);
-						_run=t1.slice(1/33,1);
+						_idle = t1//.slice(0, 0);
+						//_run=t1.slice(1/33,1);
+					
+					break;
+				case PlayerManager.WALK:					
+					
+					//trace(ResourceManager.getInstance().animation["Male_walk"][0]);
+					//var t1:AnimationClip = ResourceManager.getInstance().animation["Male_walk"][0];
+					//_idle = t1.slice(0, 0);
+					_run=ResourceManager.getInstance().animation["Male_walk"][0];
 					
 					break;
 			}
