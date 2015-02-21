@@ -52,7 +52,7 @@ package com.jeff.views
 		
 		private function init():void
 		{
-			camera=new Camera3D(10,30000);
+			camera=new Camera3D(10,40000);
 			GlobalValue.mainScene.scene3DContainer.addChild(camera);
 			camera.view=new View(GlobalValue.stageWidth,GlobalValue.stageHeight);
 			camera.view.antiAlias=4;
@@ -60,7 +60,7 @@ package com.jeff.views
 			GlobalValue.stage.addChild(camera.view);
 			if(GlobalValue.DEBUG)
 				GlobalValue.stage.addChild(camera.diagram);
-			camera.rotationX=-120 * Math.PI/180;
+			camera.rotationX=120 * Math.PI/180;
 			camera.y=-300;
 			camera.z=200;
 			_controller=new SimpleObjectController(GlobalValue.stage,camera,0,0,0);

@@ -12,8 +12,8 @@ package com.jeff.views.UI
 	
 	public class StartMenu extends UIElement
 	{
-		private static const END_FRAME_NUMBER:int = 118;
-		private static const READY_FRAME_NUMBER:int = 56;
+		private static const END_FRAME_NUMBER:int = 40;
+		private static const READY_FRAME_NUMBER:int = 20;
 		private static const NORMAL_FRAME_NUMBER:int = 1;
 		private static const HIGHLIGHT_FRAME_NUMBER:int = 2;
 		
@@ -56,13 +56,13 @@ package com.jeff.views.UI
 		private function newGameRoolOver(e:MouseEvent):void
 		{
 			Mouse.cursor = MouseCursor.BUTTON;
-			_bg["mcNewGameWrapper"]["mcContent"].gotoAndStop(HIGHLIGHT_FRAME_NUMBER);
+			//_bg["mcNewGameWrapper"]["mcContent"].gotoAndStop(HIGHLIGHT_FRAME_NUMBER);
 		}
 		
 		private function newGameRoolOut(e:MouseEvent):void
 		{
 			Mouse.cursor = MouseCursor.ARROW;
-			_bg["mcNewGameWrapper"]["mcContent"].gotoAndStop(NORMAL_FRAME_NUMBER);
+			//_bg["mcNewGameWrapper"]["mcContent"].gotoAndStop(NORMAL_FRAME_NUMBER);
 		}
 		
 		private function newGameClick(e:MouseEvent):void

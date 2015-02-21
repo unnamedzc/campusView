@@ -21,11 +21,11 @@ package com.jeff.object
 		}	
 		private function init():void
 		{
-			//this.x=-3726;
-			//this.y=7602;
-			this.z=80;
+			this.x=23546;
+			this.y=3411;
+			this.z=70;
 			this.moveSpeed=20;
-			this.rotationZ=-5.446;
+			this.rotationZ=-8.046;
 			this.currentHp=300;
 			this.jumpSpeed=GlobalValue.JUMP_START_SPEED;
 			this.attackDistance = PlayerManager.ATTACK_DISTANCE;

@@ -408,7 +408,11 @@ package com.jeff.managers.characterManager
 			_playerObject.vz = _playerObject.fallSpeed;	
 			// Collision detection
 			_destination = GlobalValue.mainScene.scene3D.playerModel.ellipsoidCollider.calculateDestination(characterCoords, _playerObject.displacment, GlobalValue.terrainContainer);	
-			_destination.z-= 90;
+			//trace(_destination.z)
+			if(_destination.z>0)
+			{
+				_destination.z-= 90;
+			}
 			/*if(GlobalValue.gm.enemyManager!=null)
 			{
 				var __enemySphere:GeoSphere;

@@ -22,7 +22,7 @@ package com.jeff.views.level
 		public function Terrain()
 		{
 			init();
-			//_rootContainer.z=-1500;
+			//_rootContainer.z=-150;
 			//_rootContainer.x=-200
 			//_rootContainer.y=6000;
 		}

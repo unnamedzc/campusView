@@ -150,6 +150,8 @@ package com.jeff.views.characterModel
 			this._characterContainer.y=_playerObject.y;
 			this._characterContainer.z=_playerObject.z;
 			this._characterContainer.rotationZ=_playerObject.rotationZ;
+			
+			//trace(_playerObject.x,_playerObject.y,_playerObject.rotationZ)
 		}
 		
 		public function destroy():void
