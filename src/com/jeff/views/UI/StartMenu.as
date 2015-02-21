@@ -68,6 +68,7 @@ package com.jeff.views.UI
 		private function newGameClick(e:MouseEvent):void
 		{
 			Mouse.cursor = MouseCursor.ARROW;
+			//GlobalValue.stage.mouseLock=true;
 			
 			(_bg as MovieClip).play();
 			Mouse.hide();

@@ -81,7 +81,7 @@ package com.jeff.views.level
 				}
 				//follows add to shadow caster
 				else if(meshName.indexOf("Tree")!=-1
-						||meshName.indexOf("Building")!=-1										
+						//||meshName.indexOf("Building")!=-1										
 					)
 				{
 					_rootContainer.addChild(_bulid[meshName]);

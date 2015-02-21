@@ -6,10 +6,10 @@ package
 	import flash.display.Sprite;
 	import flash.display.Stage3D;
 	import flash.display.StageAlign;
+	import flash.display.StageDisplayState;
 	import flash.display.StageScaleMode;
 	import flash.display3D.Context3D;
 	import flash.events.Event;
-	import flash.events.MouseEvent;
 	import flash.ui.ContextMenu;
 
 	[SWF(frameRate="60", align="center", backgroundColor="#000000")] 
@@ -40,6 +40,7 @@ package
 				removeEventListener(Event.ADDED_TO_STAGE, init);
 			stage.scaleMode = StageScaleMode.NO_SCALE;
 			stage.align = StageAlign.TOP_LEFT;
+			//stage.displayState = StageDisplayState.FULL_SCREEN;
 			
 			if (GlobalValue.checkPlayerVersion())
 			{
