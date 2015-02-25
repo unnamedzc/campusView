@@ -19,7 +19,7 @@ package
 		private var _context3D:Context3D;
 		private var _firstTime:Boolean = true;
 		
-		[Embed(source="assets/swf/LoadingPage.swf#LoadingPage")]
+		[Embed(source="assets/swf/LoadingPage2.swf#LoadingPage")]
 		private var Loading:Class;
 		[Embed(source="assets/swf/TRC_installplayer.swf#TRC_String")]
 		private var TrcInstallPlayer:Class;
@@ -67,7 +67,7 @@ package
 		public function setProg(value:Number):void
 		{
 			//loading.bar.gotoAndStop(value);
-			_loading.txtLoading.text="Loading..."+value+"%";	
+			//_loading.txtLoading.text="Loading...";//+value+"%";	
 		}
 		
 		private function onContext3DCreate(e:Event):void
@@ -85,9 +85,9 @@ package
 				stage.addChild(_loading);
 				_loading.x = (stage.stageWidth - _loading.width)/ 2;
 				_loading.y = (stage.stageHeight - _loading.height) / 2;
-				_loading.txtLoading.text="Loading..."+"0%"
-				_loading.txtLoading.selectable=false;
-				_loading.txtHints.selectable=false;
+				//_loading.txtLoading.text="Loading..."+"0%"
+				//_loading.txtLoading.selectable=false;
+				//_loading.txtHints.selectable=false;
 				stage.addEventListener(Event.RESIZE, resizeStageLoadingPhase);
 				// load resource
 				ResourceManager.getInstance().addEventListener(ResourceManager.loadOver, loadComplete3D);

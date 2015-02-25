@@ -12,8 +12,8 @@ package com.jeff.views.UI
 	
 	public class StartMenu extends UIElement
 	{
-		private static const END_FRAME_NUMBER:int = 40;
-		private static const READY_FRAME_NUMBER:int = 20;
+		private static const END_FRAME_NUMBER:int = 25;
+		private static const READY_FRAME_NUMBER:int = 10;
 		private static const NORMAL_FRAME_NUMBER:int = 1;
 		private static const HIGHLIGHT_FRAME_NUMBER:int = 2;
 		
@@ -41,8 +41,8 @@ package com.jeff.views.UI
 		{
 			if ((_bg as MovieClip).currentFrame == READY_FRAME_NUMBER && _registed == false)
 			{
-				_em.addEventListener(_bg["mcNewGameWrapper"], MouseEvent.ROLL_OVER, newGameRoolOver);
-				_em.addEventListener(_bg["mcNewGameWrapper"], MouseEvent.ROLL_OUT, newGameRoolOut);
+				//_em.addEventListener(_bg["mcNewGameWrapper"], MouseEvent.ROLL_OVER, newGameRoolOver);
+				//_em.addEventListener(_bg["mcNewGameWrapper"], MouseEvent.ROLL_OUT, newGameRoolOut);
 				_em.addEventListener(_bg["mcNewGameWrapper"], MouseEvent.CLICK, newGameClick);
 				_registed = true;
 			}
