@@ -12,7 +12,7 @@ package com.jeff.views.UI
 		public var startMenu:StartMenu = new StartMenu("StartMenuWeb");
 		/*public var playerHealthBar:PlayerHealthBar = new PlayerHealthBar("HealthBar");*/
 		//public var popupUI:RestartPopup=new RestartPopup();
-		//public var navigationMenu:NavigationMenu = new NavigationMenu("ctrl");
+		public var navigationMenu:NavigationMenu = new NavigationMenu("ctrl");
 		private var _em:EventManager = new EventManager();
 		
 		public function UILayer()
@@ -35,7 +35,7 @@ package com.jeff.views.UI
 		
 		private function hideNavigation(e:GameEvent):void
 		{
-			//this.removeChild(navigationMenu);
+			this.removeChild(navigationMenu);
 			GlobalValue.stage.focus=GlobalValue.stage;
 			GlobalValue.gm.newGame();
 		}
@@ -43,11 +43,11 @@ package com.jeff.views.UI
 		private function showNavigation(e:GameEvent):void
 		{
 			this.removeChildren();
-			/*this.addChild(navigationMenu);
+			this.addChild(navigationMenu);
 			navigationMenu.x = GlobalValue.stage.stageWidth / 2;
 			navigationMenu.y = GlobalValue.stage.stageHeight / 2;
 			navigationMenu.width=GlobalValue.stage.stageWidth*0.765;
-			navigationMenu.height=GlobalValue.stage.stageHeight*0.765;*/
+			navigationMenu.height=GlobalValue.stage.stageHeight*0.765;
 		}
 		
 		private function onStageResize(e:Event):void

@@ -6,7 +6,6 @@ package
 	import flash.display.Sprite;
 	import flash.display.Stage3D;
 	import flash.display.StageAlign;
-	import flash.display.StageDisplayState;
 	import flash.display.StageScaleMode;
 	import flash.display3D.Context3D;
 	import flash.events.Event;
@@ -19,7 +18,7 @@ package
 		private var _context3D:Context3D;
 		private var _firstTime:Boolean = true;
 		
-		[Embed(source="assets/swf/LoadingPage2.swf#LoadingPage")]
+		[Embed(source="assets/swf/LoadingPage2.swf#LoadingPage2")]
 		private var Loading:Class;
 		[Embed(source="assets/swf/TRC_installplayer.swf#TRC_String")]
 		private var TrcInstallPlayer:Class;
@@ -40,6 +39,10 @@ package
 				removeEventListener(Event.ADDED_TO_STAGE, init);
 			stage.scaleMode = StageScaleMode.NO_SCALE;
 			stage.align = StageAlign.TOP_LEFT;
+			
+			_contextMenu=new ContextMenu(); 
+			_contextMenu.hideBuiltInItems(); 
+			contextMenu=_contextMenu;
 			//stage.displayState = StageDisplayState.FULL_SCREEN;
 			
 			if (GlobalValue.checkPlayerVersion())

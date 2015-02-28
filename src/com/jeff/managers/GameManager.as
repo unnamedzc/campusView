@@ -54,13 +54,13 @@ package com.jeff.managers
 		
 		private function onShowNavigationBar(e:Event):void
 		{
-			/*ResourceManager.getInstance().load(ResourceManager.enemyXML);
+			/*ResourceManager.getInstance().load(ResourceManager.enemyXML);*/
 			var obj:Object = new Object();
 			obj.max = 0;
 			var thread:PseudoThread = new PseudoThread(GlobalValue.stage, ResourceManager.getInstance().parserCharacterAnimation, obj);
-			thread.addEventListener("threadComplete", onThreadFinished);*/
+			thread.addEventListener("threadComplete", onThreadFinished);
 			//jeff 2015.2.5. startGame
-			newGame();
+			//newGame();
 		}
 		
 		private function onThreadFinished(e:Event):void
@@ -80,7 +80,7 @@ package com.jeff.managers
 		
 		private function checkIfHideNavigation():void
 		{
-			if (_enemyLoadFlag && _characterLoadFlag)
+			if ( _characterLoadFlag)
 				this.dispatchEvent(new GameEvent(GameEvent.HIDE_NAVIGATION));
 		}
 		
