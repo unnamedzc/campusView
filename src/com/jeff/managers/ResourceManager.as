@@ -1,5 +1,7 @@
 package com.jeff.managers 
 {
+	import com.jeff.events.GameEvent;
+	
 	import flash.display.BitmapData;
 	import flash.display.Loader;
 	import flash.display.LoaderInfo;
@@ -22,6 +24,7 @@ package com.jeff.managers
 	import alternativa.engine3d.loaders.ParserCollada;
 	import alternativa.engine3d.loaders.ParserMaterial;
 	import alternativa.engine3d.loaders.TexturesLoader;
+	import alternativa.engine3d.loaders.events.TexturesLoaderEvent;
 	import alternativa.engine3d.materials.StandardMaterial;
 	import alternativa.engine3d.materials.TextureMaterial;
 	import alternativa.engine3d.objects.Mesh;
@@ -445,6 +448,7 @@ package com.jeff.managers
 										
 										trace(diffuse.url,currentDiffuse.url);
 										textures.push(currentDiffuse);
+										//trace("materialIndex",materialIndex);
 										
 										
 										if(diffuse.url.lastIndexOf('Grass_')!=-1
@@ -487,8 +491,22 @@ package com.jeff.managers
 								}
 							}
 							var texturesLoader:TexturesLoader = new TexturesLoader(GlobalValue.context3D);
+							
+							/*if(diffuse&&diffuse.url=="Grass_01.jpg")
+							{
+								texturesLoader.addEventListener(TexturesLoaderEvent.COMPLETE,onC);
+									
+								function onC(e:TexturesLoaderEvent):void
+								{
+									texturesLoader.removeEventListener(TexturesLoaderEvent.COMPLETE,onC);
+									GameManager.getInstance().loadLevelComplete();
+								}
+								//dispatchEvent(new GameEvent(GameEvent.LOAD_A3D_COMPLETE));
+							}*/
 							texturesLoader.loadResources(textures);      
 						materialIndex++;
+						
+						
 					}                                   
 				}                       
 			}

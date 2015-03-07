@@ -11,14 +11,14 @@ package
 	import flash.events.Event;
 	import flash.ui.ContextMenu;
 
-	[SWF(frameRate="60", align="center", backgroundColor="#000000")] 
+	[SWF(frameRate="60", align="center", backgroundColor="#000000",width="1000",height="800")] 
 	public class CampusTour extends Sprite
 	{
 		private var _stage3D:Stage3D;
 		private var _context3D:Context3D;
 		private var _firstTime:Boolean = true;
 		
-		[Embed(source="assets/swf/LoadingPage2.swf#LoadingPage2")]
+		[Embed(source="assets/swf/LoadingPage2.swf#LoadingPage")]
 		private var Loading:Class;
 		[Embed(source="assets/swf/TRC_installplayer.swf#TRC_String")]
 		private var TrcInstallPlayer:Class;
@@ -37,7 +37,7 @@ package
 			//trace(flash.system.Capabilities.version)
 			if (hasEventListener(Event.ADDED_TO_STAGE))
 				removeEventListener(Event.ADDED_TO_STAGE, init);
-			stage.scaleMode = StageScaleMode.NO_SCALE;
+			stage.scaleMode = StageScaleMode.SHOW_ALL;
 			stage.align = StageAlign.TOP_LEFT;
 			
 			_contextMenu=new ContextMenu(); 

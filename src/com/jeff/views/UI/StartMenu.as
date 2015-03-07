@@ -1,21 +1,22 @@
 package com.jeff.views.UI
 {
 	import com.jeff.events.GameEvent;
+	import com.jeff.managers.GameManager;
 	
 	import flash.display.MovieClip;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
-	import flash.text.TextField;
 	import flash.ui.Mouse;
 	import flash.ui.MouseCursor;
-	import flash.utils.getTimer;
 	
-	public class StartMenu extends UIElement
+	public class StartMenu extends UIElement	
 	{
 		private static const END_FRAME_NUMBER:int = 25;
 		private static const READY_FRAME_NUMBER:int = 10;
 		private static const NORMAL_FRAME_NUMBER:int = 1;
 		private static const HIGHLIGHT_FRAME_NUMBER:int = 2;
+		
+		private static var _isStartGame:Boolean=false;
 		
 		private var _registed:Boolean = false;
 		private var _beginTime:Number;
@@ -29,6 +30,17 @@ package com.jeff.views.UI
 			super.init();
 			_em.addEventListener(_bg, Event.ENTER_FRAME, checkFrame);
 			_em.addEventListener(GlobalValue.stage, Event.RESIZE, onResize);
+			
+			//resetGame
+			//_em.addEventListener(this,GameEvent.RESTART_GAME,onRestart)
+		}
+		
+		public function reset():void
+		{
+			init();
+			_registed=false;
+			this.visible=true;
+			(_bg as MovieClip).play();
 		}
 		
 		private function onResize(event:Event):void
@@ -49,7 +61,15 @@ package com.jeff.views.UI
 			else if ((_bg as MovieClip).currentFrame >= END_FRAME_NUMBER)
 			{
 				_em.removeAllListener();
-				this.dispatchEvent(new GameEvent(GameEvent.SHOW_NAVIGATION));		
+				if(!_isStartGame)
+				{
+					_isStartGame=true;
+					this.dispatchEvent(new GameEvent(GameEvent.SHOW_NAVIGATION));		
+				}else
+				{
+					this.visible=false;
+					//GameManager.getInstance().dispatchEvent(new GameEvent(GameEvent.NEW_GAME));
+				}
 			}
 		}
 		

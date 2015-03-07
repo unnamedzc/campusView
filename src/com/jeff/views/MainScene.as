@@ -50,23 +50,23 @@ package com.jeff.views
 		
 		public function popup():void
 		{
-			/*if (!_scene2D.popupUI.visible)
+			if (!_scene2D.popupUI.visible)
 			{
 				Mouse.show();
 				_scene2D.popupUI.visible=true;
 				_scene2D.popupUI.popupContent.gotoAndPlay("show");			
 				_scene2D.popupUI.restartButton.addEventListener(MouseEvent.CLICK,resetGame);
 				GlobalValue.gm.playerManager.destroy();
-			}*/
+			}
 		}
 		
 		private function resetGame(event:MouseEvent):void
 		{
-			/*_scene2D.popupUI.restartButton.removeEventListener(MouseEvent.CLICK,resetGame);
-			_scene2D.popupUI.visible=false;*/
+			_scene2D.popupUI.restartButton.removeEventListener(MouseEvent.CLICK,resetGame);
+			_scene2D.popupUI.visible=false;
 			GlobalValue.gm.reset();
 			GlobalValue.gameOver = false;
-			Mouse.hide();
+			//Mouse.hide();
 		}
 	
 	}

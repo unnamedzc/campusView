@@ -91,7 +91,7 @@ package com.jeff.views
 		{
 			//light
 			var _light:AmbientLight=new AmbientLight(0xeeeeee)
-			_light.z=10+_lightHeight;
+			_light.z=100000+_lightHeight;
 			_light.intensity=1.1			
 			GlobalValue.mainScene.scene3DContainer.addChild(_light);
 			
@@ -99,17 +99,17 @@ package com.jeff.views
 			
 			_light3.x=-1615;_light3.y=6855;
 			_light3.z=1220+_lightHeight;
-			_light3.intensity=.5;	
+			_light3.intensity=.1;	
 			_light3.lookAt(-1676,6968,1064)
 			GlobalValue.mainScene.scene3DContainer.addChild(_light3);
-			var _light4:DirectionalLight=new DirectionalLight(0x221111)
+			/*var _light4:DirectionalLight=new DirectionalLight(0x221111)
 			//	light.x=light.y=100;
 			_light4.z=200+_lightHeight;
 			_light4.x=350;
 			_light4.y=1900;
 			_light4.intensity=.5
 			_light4.lookAt(350,1900,0);
-			GlobalValue.mainScene.scene3DContainer.addChild(_light4);
+			GlobalValue.mainScene.scene3DContainer.addChild(_light4);*/
 		}
 		
 		private function addShadow():void

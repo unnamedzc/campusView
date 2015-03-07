@@ -29,7 +29,7 @@ package com.jeff.managers
 		
 		private var _displayIntroTimer:int; 
 		private var _showIntroTimer:int;
-		private var _enemyLoadFlag:Boolean = false;
+		private var _levelLoadFlag:Boolean = false;
 		private var _characterLoadFlag:Boolean = false;
 		
 		/*private var _enemyManager:EnemyManager;
@@ -49,7 +49,8 @@ package com.jeff.managers
 		{
 			playerManager=new PlayerManager();
 			
-			ResourceManager.getInstance().addEventListener(ResourceManager.loadOver, loadEnemyComplete);
+			//ResourceManager.getInstance().addEventListener(ResourceManager.loadOver, loadEnemyComplete);
+			//ResourceManager.getInstance().addEventListener(GameEvent.LOAD_A3D_COMPLETE, loadLevelComplete);
 		}
 		
 		private function onShowNavigationBar(e:Event):void
@@ -70,23 +71,24 @@ package com.jeff.managers
 			checkIfHideNavigation();
 		}
 		
-		private function loadEnemyComplete(e:Event):void
+		public function loadLevelComplete():void
 		{
 			//ResourceManager.getInstance().removeEventListener(ResourceManager.loadEnemyOver, loadEnemyComplete);
-			_enemyLoadFlag = true;
+			_levelLoadFlag = true;
 			checkIfHideNavigation();
 			//_enemyManager = new EnemyManager();
 		}
 		
 		private function checkIfHideNavigation():void
 		{
-			if ( _characterLoadFlag)
+			if ( _characterLoadFlag&&_levelLoadFlag)
 				this.dispatchEvent(new GameEvent(GameEvent.HIDE_NAVIGATION));
 		}
 		
 		public function startUp():void
 		{
 			_em.addEventListener(GlobalValue.mainScene.scene2D.startMenu, GameEvent.SHOW_NAVIGATION, onShowNavigationBar);
+			//_em.addEventListener(GlobalValue.mainScene.scene2D.startMenu, GameEvent.RESTART_GAME, onResartGame);
 			_gameState = STATE_BEFORE_GAME;
 			if (GlobalValue.DEBUG)
 				newGame();//for debug
@@ -97,6 +99,7 @@ package com.jeff.managers
 			
 			//newGame();
 		}
+				
 				
 		public function newGame():void
 		{
@@ -134,6 +137,8 @@ package com.jeff.managers
 		public function reset():void
 		{
 			playerManager.reset();
+			dispatchEvent(new GameEvent(GameEvent.RESTART_GAME));
+			//dispatchEvent(new GameEvent(GameEvent.RESTART_GAME));
 			//if (null != _enemyManager) _enemyManager.reset();
 		}
 		

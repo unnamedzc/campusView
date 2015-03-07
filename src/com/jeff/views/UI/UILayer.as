@@ -10,9 +10,10 @@ package com.jeff.views.UI
 	public class UILayer extends Sprite
 	{	
 		public var startMenu:StartMenu = new StartMenu("StartMenuWeb");
+		
 		/*public var playerHealthBar:PlayerHealthBar = new PlayerHealthBar("HealthBar");*/
-		//public var popupUI:RestartPopup=new RestartPopup();
-		public var navigationMenu:NavigationMenu = new NavigationMenu("ctrl");
+		public var popupUI:RestartPopup=new RestartPopup();
+		public var navigationMenu:NavigationMenu //= new NavigationMenu("ctrl");
 		private var _em:EventManager = new EventManager();
 		
 		public function UILayer()
@@ -31,18 +32,24 @@ package com.jeff.views.UI
 			
 			_em.addEventListener(GlobalValue.gm, GameEvent.BEGIN_INTRO, beginIntro);
 			_em.addEventListener(GlobalValue.gm, GameEvent.END_INTRO, endIntro);
+			
+			_em.addEventListener(GlobalValue.gm, GameEvent.RESTART_GAME, reshowStartMenu);
 		}
 		
 		private function hideNavigation(e:GameEvent):void
 		{
-			this.removeChild(navigationMenu);
-			GlobalValue.stage.focus=GlobalValue.stage;
-			GlobalValue.gm.newGame();
+			if(this.contains(navigationMenu))
+			{
+				this.removeChild(navigationMenu);
+				GlobalValue.stage.focus=GlobalValue.stage;
+				GlobalValue.gm.newGame();
+			}
 		}
 		
 		private function showNavigation(e:GameEvent):void
 		{
 			this.removeChildren();
+			navigationMenu = new NavigationMenu("ctrl");
 			this.addChild(navigationMenu);
 			navigationMenu.x = GlobalValue.stage.stageWidth / 2;
 			navigationMenu.y = GlobalValue.stage.stageHeight / 2;
@@ -93,17 +100,18 @@ package com.jeff.views.UI
 		}
 		
 		private function beginIntro(e:GameEvent):void
-		{
+		{		
+			
 			/*this.addChild(radio);
 			radio.x = (GlobalValue.stage.stageWidth - radio.width) / 2;
 			radio.y = GlobalValue.stage.stageHeight * 4 / 5;*/
 			
 			//playerHealthBar.scaleX = playerHealthBar.scaleY = playerHealthBar.scaleZ = 0.8;
 			//addChild(playerHealthBar);
-			/*addChild(popupUI);
+			addChild(popupUI);
 			popupUI.x = (GlobalValue.stage.stageWidth - popupUI.width) / 2;
 			popupUI.y = (GlobalValue.stage.stageHeight - popupUI.height) / 2;
-			popupUI.visible=false;*/
+			popupUI.visible=false;
 		}
 		
 		private function endIntro(e:GameEvent):void
@@ -114,14 +122,38 @@ package com.jeff.views.UI
 		private function disappearStartMenu(e:GameEvent):void
 		{
 			this.removeChildren();
+			startMenu=null;
+			//startMenu.visible=false;
+		}
+		
+		private function reshowStartMenu(e:GameEvent):void
+		{
+			if(startMenu)
+			{
+				this.removeChild(startMenu);
+				startMenu=null;
+			}
+			startMenu	= new StartMenu("StartMenuWeb");
+			this.addChild(startMenu);
+			startMenu.x = GlobalValue.stage.stageWidth / 2;
+			startMenu.y = GlobalValue.stage.stageHeight / 2;
+			
+			//startMenu.width=1024;
+			//startMenu.height=768;
+			//startMenu.visible=true;
+			//startMenu.reset();
 		}
 		
 		private function showStartMenu(e:GameEvent):void
 		{
 			this.removeChildren();
+			//startMenu=null;
+			//if(startMenu==null) startMenu	= new StartMenu("StartMenuWeb");
 			this.addChild(startMenu);
 			startMenu.x = GlobalValue.stage.stageWidth / 2;
 			startMenu.y = GlobalValue.stage.stageHeight / 2;
+			//startMenu.width=1024;
+			//startMenu.height=768;
 		}
 		
 	}

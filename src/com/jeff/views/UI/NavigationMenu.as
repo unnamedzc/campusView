@@ -1,7 +1,7 @@
 package com.jeff.views.UI
 {
 	import flash.display.MovieClip;
-	import com.jeff.managers.TimerManager;
+	import com.jeff.managers.GameManager;
 
 	public class NavigationMenu extends HUD
 	{
@@ -9,8 +9,10 @@ package com.jeff.views.UI
 		private var _currentIndex:int = 0;
 		
 		private static const MAX_HINT_SCREEN:int = 3;
-		private static const CHANGE_INTERVAL:int = 10000; // 10 seconds to change hint screen
+		private static const CHANGE_INTERVAL:int = 5000; // 10 seconds to change hint screen
 
+		public static var _isOk:int=0;
+		
 		public function NavigationMenu(className:String)
 		{
 			super(className);
@@ -30,6 +32,12 @@ package com.jeff.views.UI
 		{
 			_currentIndex = ++_currentIndex % MAX_HINT_SCREEN;
 			(_bg as MovieClip).gotoAndStop(_currentIndex + 1);
+			_isOk++;
+			
+			if(_isOk>2)
+			{
+				GameManager.getInstance().loadLevelComplete();
+			}
 		}
 	}
 	

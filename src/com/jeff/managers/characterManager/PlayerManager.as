@@ -258,6 +258,10 @@ package com.jeff.managers.characterManager
 						if(_playerObject.y<-5000) _playerObject.y=-5000;
 					}
 					break;	
+				case Keyboard.ESCAPE:
+					GlobalValue.gameOver = true;
+					GlobalValue.mainScene.popup();
+					break;
 				case Keyboard.SHIFT:
 					if(GlobalValue.DEBUG)
 					{
@@ -322,7 +326,7 @@ package com.jeff.managers.characterManager
 				changeState(WALK);
 				
 				_deltaTime=GlobalValue.gm.deltaTime;
-				_playerObject.fallSpeed -= 0.5*GlobalValue.GRAVITY*_deltaTime*_deltaTime;
+				_playerObject.fallSpeed=-2* GlobalValue.GRAVITY*_deltaTime*_deltaTime;
 				
 			}
 			//activate idle animation
@@ -408,46 +412,22 @@ package com.jeff.managers.characterManager
 			_playerObject.vz = _playerObject.fallSpeed;	
 			// Collision detection
 			_destination = GlobalValue.mainScene.scene3D.playerModel.ellipsoidCollider.calculateDestination(characterCoords, _playerObject.displacment, GlobalValue.terrainContainer);	
-			//trace(_destination.z)
-			if(_destination.z>90)
-			{
-				_destination.z-= 90;
-			}else
-			{
-				_destination.z=90;
-			}
-			/*if(GlobalValue.gm.enemyManager!=null)
-			{
-				var __enemySphere:GeoSphere;
-				var i:int = 0;
-				var max:int = GlobalValue.enemySphere.length;
-				for (i = 0; i < max; i++)
-				{
-					__enemySphere = GlobalValue.enemySphere[i]
-					_onEnemy = collider.getCollision(characterCoords, _playerObject.displacment, _collisionPoint, _collisionPlane, __enemySphere);				
-					if (_onEnemy)
-					{
-						_destination = collider.calculateDestination(characterCoords, _playerObject.displacment, __enemySphere);				
-						if(!_onGround)
-						{
-							_destination.z-= 90;
-						}
-						else
-						{
-							_destination.z=characterCoords.z-90;
-						}
-					}
-				}	
-			}	*/
+			trace(_destination.z)	
+			
+			_destination.z-= 90;				
+			
 			GlobalValue.camera.stopTimer();
 			_playerObject.x = _destination.x;
 			_playerObject.y = _destination.y;
-			_playerObject.z = _destination.z;
+			
+			_playerObject.z=_destination.z;
+			
+			//trace(_playerObject.z)
 		}
 		
 		public function reset():void
-		{
-			_playerObject.x=-3726;_playerObject.y=7602;_playerObject.z=-554.8;_playerObject.rotationZ=-5.446;
+		{			
+			_playerObject.x=23546;_playerObject.y=3411;_playerObject.z=70;_playerObject.rotationZ=-5.446;
 			_playerObject.vx=_playerObject.vy=_playerObject.vz=0;
 			_moveForward=_moveBackward=_turnLeft=_turnRight=false;
 			_playerObject.weaponAndState="";

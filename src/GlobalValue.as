@@ -21,7 +21,7 @@ package
 		public static const PERMIT_VERSION_2:Number = 2;
 		public static const FPS:int = 30;
 		public static const TIME_SCALE:Number = 0.7;
-		public static const GRAVITY:int=9000;
+		public static const GRAVITY:int=10000;
 		public static const JUMP_START_SPEED:Number=1150;
 		public static const CROSS_ZOOM_RATE:Number=0.0007;
 		public static const PLAYER_ATTACK_SPEED:Number=1;
