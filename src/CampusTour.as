@@ -11,7 +11,7 @@ package
 	import flash.events.Event;
 	import flash.ui.ContextMenu;
 
-	[SWF(frameRate="60", align="center", backgroundColor="#000000",width="1000",height="800")] 
+	[SWF(frameRate="60", align="center", backgroundColor="#000000",width="1024",height="768")] 
 	public class CampusTour extends Sprite
 	{
 		private var _stage3D:Stage3D;

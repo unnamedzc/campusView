@@ -34,7 +34,7 @@ package com.jeff.views
 		private static const CAMERA_DISTANCE:Number = 500;
 		private static const CAMERA_HEIGHT:Number = 190;
 		private static const CAMERA_MAX_ROTATION:Number = Math.PI / 180 * 3600; //每帧最多旋转6度
-		private static const CAMERA_MAX_VALUE:Number = 200; //鼠标阀值 150
+		private static const CAMERA_MAX_VALUE:Number = 100; //鼠标阀值 150
 		private var _cameraFixVector3D:Vector3D=new Vector3D();	
 		
 		private var _mousePrevValue:int = -1;

@@ -18,7 +18,7 @@ package com.jeff.views.characterModel
 			directionalLight.x=-1000;
 			directionalLight.lookAt(0, 0, 0);
 			GlobalValue.mainScene.scene3DContainer.addChild(directionalLight);		
-			directionalLight.intensity=0.28;
+			directionalLight.intensity=0.3;
 			
 			shadow.addCaster(terrain);			
 			shadow.addCaster(player);
