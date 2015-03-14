@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--model.textFile.@name 不能重复-->
+<resource>
+	<model>
+		<textFile  name="lion"	size="717646"  animation = "0" src="assets/level/lion.DAE"	/>
+		<imageFile name="lion"	size="405697" ext = "1"
+				diffuseSrc="assets/obj_shaolinshishi01_map01.jpg"  normalSrc="assets/obj_shaolinshishi01_map02.jpg"/>
+	</model>
+</resource>
