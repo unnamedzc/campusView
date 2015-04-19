@@ -11,8 +11,9 @@ package com.jeff.views.UI
 	{	
 		public var startMenu:StartMenu = new StartMenu("StartMenuWeb");
 		
-		/*public var playerHealthBar:PlayerHealthBar = new PlayerHealthBar("HealthBar");*/
+		public var playerHealthBar:PlayerHealthBar = new PlayerHealthBar("player");
 		public var popupUI:RestartPopup=new RestartPopup();
+		private var tBt:UIButtons=new UIButtons("buttons","stu");
 		public var navigationMenu:NavigationMenu //= new NavigationMenu("ctrl");
 		private var _em:EventManager = new EventManager();
 		
@@ -106,8 +107,10 @@ package com.jeff.views.UI
 			radio.x = (GlobalValue.stage.stageWidth - radio.width) / 2;
 			radio.y = GlobalValue.stage.stageHeight * 4 / 5;*/
 			
-			//playerHealthBar.scaleX = playerHealthBar.scaleY = playerHealthBar.scaleZ = 0.8;
-			//addChild(playerHealthBar);
+			addChild(tBt);
+			
+			playerHealthBar.scaleX = playerHealthBar.scaleY = playerHealthBar.scaleZ = 0.8;
+			addChild(playerHealthBar);
 			addChild(popupUI);
 			popupUI.x = (GlobalValue.stage.stageWidth - popupUI.width) / 2;
 			popupUI.y = (GlobalValue.stage.stageHeight - popupUI.height) / 2;

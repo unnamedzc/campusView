@@ -22,11 +22,11 @@ package com.jeff.views.UI
 		protected override function init():void
 		{
 			super.init();
-			bar = _bg["mcHealthPanel"]["mcBar"];
-			actionMC = _bg["action_mc"];
-			_freezeMC= _bg["action_mc"]["freeze"];
-			actionMC.gotoAndStop(1);
-			barFullSize = bar.width;
+			//bar = _bg["mcHealthPanel"]["mcBar"];
+			//actionMC = _bg["action_mc"];
+			//_freezeMC= _bg["action_mc"]["freeze"];
+			//actionMC.gotoAndStop(1);
+			//barFullSize = bar.width;
 		}
 		
 		// value range from 0 to 1
@@ -38,7 +38,7 @@ package com.jeff.views.UI
 		
 		public function cannonFreeze():void
 		{
-			_freezeMC.gotoAndPlay(2);
+			//_freezeMC.gotoAndPlay(2);
 		}
 		
 	}
