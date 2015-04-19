@@ -13,7 +13,7 @@ package com.jeff.views.UI
 		
 		public var playerHealthBar:PlayerHealthBar = new PlayerHealthBar("player");
 		public var popupUI:RestartPopup=new RestartPopup();
-		private var tBt:UIButtons=new UIButtons("buttons","stu");
+		//private var tBt:UIButtons=new UIButtons("buttons","stu");
 		public var navigationMenu:NavigationMenu //= new NavigationMenu("ctrl");
 		private var _em:EventManager = new EventManager();
 		
@@ -107,7 +107,7 @@ package com.jeff.views.UI
 			radio.x = (GlobalValue.stage.stageWidth - radio.width) / 2;
 			radio.y = GlobalValue.stage.stageHeight * 4 / 5;*/
 			
-			addChild(tBt);
+			//addChild(tBt);
 			
 			playerHealthBar.scaleX = playerHealthBar.scaleY = playerHealthBar.scaleZ = 0.8;
 			addChild(playerHealthBar);
