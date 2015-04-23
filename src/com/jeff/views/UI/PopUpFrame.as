@@ -44,7 +44,7 @@ package com.jeff.views.UI
 			//this.alpha=1;
 			//this.scaleX=this.scaleY=1;
 			_em.addEventListener(_bg["close"], MouseEvent.CLICK, onCloseClick);
-			TweenLite.to(this, 0.5, {scaleX:1,scaleY:1, ease:Back.easeOut,onComplete: onFinishTween/*, onCompleteParams:[5, this]*/});
+			TweenLite.to(this, 0.8, {scaleX:1,scaleY:1, ease:Back.easeInOut/*,onComplete: onFinishTween, onCompleteParams:[5, this]*/});
 			function onFinishTween(/*argument1:Number, argument2:MovieClip*/):void {
 				//TweenLite.
 				//trace("The tween has finished! argument1 = " + argument1 + ", and argument2 = " + argument2);
