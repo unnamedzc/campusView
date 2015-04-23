@@ -2,10 +2,12 @@ package com.jeff.views.UI
 {
 	import com.jeff.events.GameEvent;
 	import com.jeff.managers.EventManager;
+	import com.jeff.views.UI.UIButtons;
 	
 	import flash.display.DisplayObject;
 	import flash.display.Sprite;
 	import flash.events.Event;
+	import flash.events.MouseEvent;
 	
 	public class UILayer extends Sprite
 	{	
@@ -13,6 +15,17 @@ package com.jeff.views.UI
 		
 		public var playerHealthBar:PlayerHealthBar = new PlayerHealthBar("player");
 		public var popupUI:RestartPopup=new RestartPopup();
+		private var xfBt :UIButtons=new UIButtons("xf","");
+		private var tsjyBt:UIButtons=new UIButtons("tsjy","");
+		private var jwxxBt:UIButtons=new UIButtons("jwxx","");
+		
+		private var chatBar:UIElement=new UIElement("chat");
+		
+		private var bcBar:TwoFrameHud=new TwoFrameHud("bczn");
+		private var ggBar:TwoFrameHud=new TwoFrameHud("ggxx");
+		private var mapFrame:UIElement =new UIElement("map");
+		
+		private var popFrame:PopUpFrame = new PopUpFrame("popFrame");
 		//private var tBt:UIButtons=new UIButtons("buttons","stu");
 		public var navigationMenu:NavigationMenu //= new NavigationMenu("ctrl");
 		private var _em:EventManager = new EventManager();
@@ -107,14 +120,57 @@ package com.jeff.views.UI
 			radio.x = (GlobalValue.stage.stageWidth - radio.width) / 2;
 			radio.y = GlobalValue.stage.stageHeight * 4 / 5;*/
 			
-			//addChild(tBt);
+			addChild(xfBt);
+			addChild(tsjyBt);
+			addChild(jwxxBt);
+			addChild(mapFrame);
 			
-			playerHealthBar.scaleX = playerHealthBar.scaleY = playerHealthBar.scaleZ = 0.8;
+			
+						
+			popFrame.x = (GlobalValue.stage.stageWidth ) / 2;
+			popFrame.y = (GlobalValue.stage.stageHeight ) / 2;
+			popFrame.visible=false;
+			popFrame.reset();
+			
+			mapFrame.x=GlobalValue.stage.stageWidth-mapFrame.width;
+			
+			xfBt.y=GlobalValue.stage.stageHeight-100;
+			xfBt.x=GlobalValue.stage.stageWidth/2;
+			tsjyBt.y=GlobalValue.stage.stageHeight-100;
+			tsjyBt.x=xfBt.x+100;
+			jwxxBt.y=GlobalValue.stage.stageHeight-100;
+			jwxxBt.x=tsjyBt.x+100;
+			
+			//playerHealthBar.scaleX = playerHealthBar.scaleY = playerHealthBar.scaleZ = 0.8;
 			addChild(playerHealthBar);
-			addChild(popupUI);
+			addChild(popupUI);			
+			addChild(bcBar);
+			addChild(ggBar);
+			
+			addChild(chatBar);
+			
+			addChild(popFrame);
+			
+			chatBar.y=GlobalValue.stage.stageHeight/2;
+			
+			bcBar.x=GlobalValue.stage.stageWidth -bcBar.width;
+			ggBar.x=GlobalValue.stage.stageWidth -bcBar.width;
+			
+			bcBar.y=GlobalValue.stage.stageHeight/2 -bcBar.height*2;
+			ggBar.y=GlobalValue.stage.stageHeight/2 +bcBar.height*2;
+			
 			popupUI.x = (GlobalValue.stage.stageWidth - popupUI.width) / 2;
 			popupUI.y = (GlobalValue.stage.stageHeight - popupUI.height) / 2;
 			popupUI.visible=false;
+			
+			_em.addEventListener(xfBt, MouseEvent.CLICK, onShowPop);
+			_em.addEventListener(tsjyBt, MouseEvent.CLICK, onShowPop);
+			_em.addEventListener(jwxxBt, MouseEvent.CLICK, onShowPop);
+		}
+		
+		private function onShowPop(e:MouseEvent):void
+		{
+			popFrame.onShow();
 		}
 		
 		private function endIntro(e:GameEvent):void

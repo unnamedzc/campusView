@@ -91,7 +91,7 @@ package com.jeff.views.UI
 			//GlobalValue.stage.mouseLock=true;
 			
 			(_bg as MovieClip).play();
-			Mouse.hide();
+			//Mouse.hide();
 		}
 	}
 }
