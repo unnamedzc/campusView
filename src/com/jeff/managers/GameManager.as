@@ -17,8 +17,8 @@ package com.jeff.managers
 		private static const END_INTRO:String = "endintro";
 		private static const END_GAME:String = "endgame";
 		
-		private static const BEGIN_INTRO_DURATION:int = 2;
-		private static const INTRO_DURATION:int = 5;
+		private static const BEGIN_INTRO_DURATION:Number = 0.01;
+		private static const INTRO_DURATION:int = 2;
 		
 		private static var _instance:GameManager;
 		public var playerManager:PlayerManager;

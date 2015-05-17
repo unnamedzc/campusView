@@ -125,7 +125,6 @@ package com.jeff.views.UI
 			addChild(jwxxBt);
 			addChild(mapFrame);
 			
-			
 						
 			popFrame.x = (GlobalValue.stage.stageWidth ) / 2;
 			popFrame.y = (GlobalValue.stage.stageHeight ) / 2;

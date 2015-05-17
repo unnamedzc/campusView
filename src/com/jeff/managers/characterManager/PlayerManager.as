@@ -1,8 +1,5 @@
 package com.jeff.managers.characterManager
 {
-	import alternativa.engine3d.collisions.EllipsoidCollider;
-	import alternativa.engine3d.primitives.GeoSphere;
-	
 	import com.jeff.events.ParticleEffectEvent;
 	import com.jeff.events.PlayerStateEvent;
 	import com.jeff.managers.EventManager;
@@ -15,6 +12,9 @@ package com.jeff.managers.characterManager
 	import flash.events.MouseEvent;
 	import flash.geom.Vector3D;
 	import flash.ui.Keyboard;
+	
+	import alternativa.engine3d.collisions.EllipsoidCollider;
+	import alternativa.engine3d.primitives.GeoSphere;
 	
 	public class PlayerManager extends EventDispatcher
 	{
@@ -135,10 +135,15 @@ package com.jeff.managers.characterManager
 			init();
 		}
 		
+		public function registerKeyBoardForPlayer():void
+		{
+			addKeyBoardEvent();
+		}
+		
 		private function init():void
 		{
 			_playerObject=new PlayerObject();
-			addKeyBoardEvent();
+			//addKeyBoardEvent();
 		}
 		
 		private function addKeyBoardEvent():void
@@ -399,6 +404,8 @@ package com.jeff.managers.characterManager
 			}
 			collisionDetection();
 		}
+		
+		private var initPlayer:Boolean = false;
 				
 		private function collisionDetection():void
 		{	
@@ -411,18 +418,30 @@ package com.jeff.managers.characterManager
 			} 		
 			_playerObject.vz = _playerObject.fallSpeed;	
 			// Collision detection
-			_destination = GlobalValue.mainScene.scene3D.playerModel.ellipsoidCollider.calculateDestination(characterCoords, _playerObject.displacment, GlobalValue.terrainContainer);	
-			trace(_destination.z)	
-			
-			_destination.z-= 90;				
+				
+			//trace("zz:",_destination.z,_playerObject.z)	
+			if(_playerObject.z<57)
+			{
+				_playerObject.z=57;//5_destination.z;
+			}else
+			{
+				_destination = GlobalValue.mainScene.scene3D.playerModel.ellipsoidCollider.calculateDestination(characterCoords, _playerObject.displacment, GlobalValue.terrainContainer);
+				_destination.z-= 90;	
+				_playerObject.z=_destination.z;
+			}
 			
 			GlobalValue.camera.stopTimer();
 			_playerObject.x = _destination.x;
 			_playerObject.y = _destination.y;
 			
-			_playerObject.z=_destination.z;
+			//_playerObject.z=_destination.z;
 			
 			//trace(_playerObject.z)
+			if(initPlayer == false)
+			{
+				initPlayer = true;
+				GlobalValue.gm.playerManager.registerKeyBoardForPlayer();
+			}
 		}
 		
 		public function reset():void
